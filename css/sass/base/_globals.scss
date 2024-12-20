@@ -1,0 +1,188 @@
+/* global styles */
+@use '../abstracts' as *;
+*,::before,::after {				
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body,html {				
+	max-width: 100%;
+	overflow-x: hidden;
+}
+body {				
+	font-family: 'Source Sans 3', sans-serif;
+}
+ul,ol,dl {				
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+a {				
+	text-decoration: none;
+}
+:root {
+	--primary: #11589a;
+    --primary-100: #0e487d;
+    --secondary: #03a9f5;
+    --secondary-100: #1897d1;
+    --tertiary: #f29400;
+    --error: #dd3f3f;
+    --blue-100: #0e487d;
+    --blue-200: #010035;
+    --red-100: #b60007;
+    --green-100: #22af6b;
+    --grey-50: #fafafa;
+    --grey-70: #f1f1fa;
+    --grey-100: #f6f6f6;
+    --grey-150: #eaeaea;
+    --grey-700: #828282;
+    --grey-900: #555;
+    --grey-950: #313131;
+    --grey-1000: #2a2a2a;
+    --paging-hover: var(--primary-100);
+    --paging-arrow-hover: var(--secondary);
+    --border_dropdown: var(--grey-550);
+    --secondary_button: var(--secondary);
+    --carlink: var(--primary);
+    --btn: var(--white);
+    --bg_tab: var(--primary);
+    --bg_tab-selected: var(--white);
+    --text_tab: var(--primary);
+    --switch: var(--primary);
+    --input: var(--grey-550);
+    --checkbox: var(--grey-900);
+    --loader: var(--primary-100);
+    --dropdown-hover: rgba(17,88,154,.1);
+    --checked: var(--primary);
+    --title-primary: var(--primary);
+    --title-secondary: var(--secondary);
+    --icon-default: var(--text);
+    --icon-primary: var(--primary);
+    --icon-secondary: var(--secondary);
+    --icon-primary-2: var(--primary);
+    --icon-secondary-2: var(--secondary);
+    --dot: var(--primary);
+    --dot-active: var(--primary);
+    --stepListDots: var(--secondary);
+    --stepListDotsBackground: rgba(3,169,245,.1);
+    --h_button: 5.5rem;
+    --b-radius_button-default: 1rem;
+    --b-radius_S: 0.4rem;
+    --b-radius_M: 1rem;
+    --b-radius_L: 2.4rem;
+    --b-shadow_normal: 0 0 2px 2px rgba(0,0,0,.1);
+	--h_header_height: 8rem;
+    --h_header-mobile_height: 6.4rem;
+    --z-index_100: 100;
+    --z-index_200: 200;
+    --z-index_201: 201;
+    --z-index_202: 202;
+    --p_card-car: 1.2rem 1.2rem;
+    --p_card-info: 3.5rem 1.8rem 4rem 1.8rem;
+}
+
+// common
+.overlay {
+	@include after(0,0,100%,100%,rgba(0,0,0,0.5));
+}
+.main-heading {
+	text-align: center;
+    // margin-bottom: 40px;
+	.title {
+		font-weight: bold;
+        font-size: 2em;
+        margin-bottom: 10px;
+		span:first-child {
+			color: $primary;
+		}
+		span:last-child {
+			color: $secondary;
+		}
+	}
+	.descr {
+		color: $black;
+        font-size: 15px;
+        font-weight: 500;
+        // width: 85%;
+        // margin: 0 auto;
+	}
+}
+.py {
+	padding: 50px 0;
+}
+.button {
+    font-size: 14px;
+	border: none;
+	text-align: center;
+	color: $white;
+	padding: 15px 22px;
+    font-weight: 600;
+	border-radius: $border-r;
+	background-color: $primary;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	transition: 0.3s;
+	&:hover {
+		background-color: $alt-primary;
+	}
+    @media(min-width: 576px) {
+	    padding: 1.1em 2.8em;
+    }
+}
+
+.slide {
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $white;
+    display: grid;
+    place-items: center;
+    box-shadow: $box-s;
+    svg {
+        color: $black;
+    }
+}
+.px {
+    padding: 0 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+p {
+    font-size: 14px;
+}
+a {
+    font-size: 13px;
+}
+.bullets {
+    li {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        background-color: #b7cce0;
+        border-radius: 50%;
+    }
+    li.active {
+        background-color: $primary;
+    }
+    li.active::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        top: -5px;
+        left: -5px;
+        border: 1px solid $primary;
+    }
+}

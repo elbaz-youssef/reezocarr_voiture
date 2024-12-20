@@ -1,0 +1,438 @@
+/* style of main page */ 
+@use '../abstracts' as *;
+.main {
+    min-height: 100vh;
+    background-image: url("../../../images/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: $white;
+    .main-content {
+        width: 100%;
+        @media(min-width: 768px) {
+            width: 75%;
+        }        
+        padding-bottom: 35px;
+        .main-title {
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-size: 20px;
+            span {
+                font-weight: bold;
+            }
+        }
+        .main-buttons {
+            margin-inline: auto;
+            max-width: 700px;
+            button {
+                padding: 15px 30px;
+                border: none;
+                border-radius: $border-r;
+                font-size: 14px;
+                font-weight: 600;
+                &:first-of-type {
+                    background-color: $white;
+                    color: $secondary;
+                    transition: 0.3s;
+                    font-weight: 600;
+                    &:hover {
+                        color: $white;
+                        background-color: $secondary;
+                    }
+                }
+                &:last-of-type {
+                    background-color: $primary;
+                    color: $white;
+                    transition: 0.3s;
+                    &:hover {
+                        background-color: $alt-primary;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+// start offre section
+.offres {
+    .offre-item {
+        min-width: 280px;
+        max-width: 330px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        padding: 0;
+        border-radius: $border-r;
+        box-shadow: $box-s;
+        .offre-img {
+            height: 180px;
+            img {
+                height: 100%;
+                width: 100%;
+                border-top-left-radius: $border-r;
+                border-top-right-radius: $border-r;
+            }
+        }
+        .item-content {
+            padding: 10px;
+            .item-title {
+                color: $black;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            .offre-price {
+                text-align: end;
+                color: #e8e8e8;
+                span {
+                    color: $primary;
+                    font-weight: bold;
+                }
+                span:first-of-type {
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: $alt-primary;
+                }
+                span:nth-of-type(2) {
+                    margin-right: 5px;
+                }
+                span:last-of-type {
+                    color: $secondary;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                }
+            }
+            // ul li {
+            //     display: inline-block;
+            //     margin-left: 5px;
+            //     text-align: center;
+            // }
+            ul li a {
+                color: $black;
+                font-size: 14px;
+            }
+            ul li a span {
+                display: block;
+            }
+        }
+    }
+    // .button {
+    //     background-color: $primary;
+    //     transition: 0.3s;
+    //     &:hover {
+    //         background-color: $alt-primary;
+    //     }
+    // }
+}
+
+// start marque
+.marque {
+    .marque-lists {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        li {
+            padding: 0.5em 1em;
+            border-radius: $border-r;
+            min-width: 120px;
+            font-weight: 700;
+            font-size: 14px;
+            &:first-of-type {
+                border: 1px solid $primary;
+                color: $primary;
+            }
+            &:nth-of-type(2) {
+                border: 1px solid $secondary;
+                color: $white;
+                background-color: $secondary;
+            }
+            &:last-of-type {
+                border: 1px solid $orange;
+                color: $orange;
+            }
+        }
+    }
+    .model-item {
+        min-width: 100px;
+        padding: 20px;
+        border-radius: $border-r;
+        border: 1px solid #e8e8e8;
+        &.active {
+            border: 1px solid $secondary;
+        }
+    }
+    .marques {
+        background: $white-blue;
+        border-radius: $border-r;
+        padding: 50px 0;
+        margin-top: 40px;
+        .marque-item {
+            min-width: 150px;
+        }
+    }
+}
+
+// start avis
+.avis {
+    .avis-item {
+        svg {
+            color: $primary;
+        }
+        p {
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            span {
+                color: $secondary;
+                font-size: 2.2em;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// start fonctionalites
+.fonctionalities {
+    margin-top: 20px;
+    .fonctionality-item {
+        margin-bottom: 20px;
+        @media(min-width: 768px) {
+            min-width: 270px;
+            max-width: 300px;
+        }
+        .fonctionality-img,
+        .fonctionality-content {
+            @media(min-width: 576px) and (max-width: 767.98px) {
+                width: 50%;
+            }
+        }
+        .fonctionality-content {
+            @media(min-width: 400px) {
+                padding: 0 30px;
+            }
+        }
+        .fonctionality-title {
+            color: $secondary;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .fonctionality-descr {
+            padding: 5px 0;
+            font-size: 15px;
+            @media (min-width: 576px) {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+// start occasions
+.occasions {
+    width: 95%;
+    margin-inline: auto;
+    border: 1px solid $secondary;
+    border-radius: $border-r;
+    .occasion-item {
+        @media(min-width: 768px) {
+            width: 50% !important;
+        }
+        iframe {
+            width: 100%;
+            height: 360px;
+            border-radius: $border-r;
+            @media(min-width: 768px) {
+                padding-right: 20px;            }
+        }
+        p {
+            font-size: 15px;
+        }
+        h4 {
+            color: $secondary;
+        }
+    }
+    button {
+        margin-bottom: 0;
+    }
+}
+
+// start acual offre
+.offre-actuel {
+    .offre-actuel-container {
+        margin-top: 30px;
+    }
+    .offre-actuel-item {
+        min-width: 280px;
+        max-width: 330px;
+        height: 300px;
+        border-radius: $border-r;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        &:first-child {
+            background-image: url('../../../images/yellow-car-gas-station.jpg');
+        }
+        &:nth-child(2) {
+            background-image: url('../../../images/blue-car-driving-road.jpg');
+        }
+        &:nth-child(3) {
+            background-image: url('../../../images/red-car.jpg');
+        }
+    }
+    .offre-descr {
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+// start client opinions
+.client-opinion {
+    .client-opinion-container {
+        margin: 5px;
+    }
+    .client-opinion-item {
+        box-shadow: $box-s;
+        padding: 30px 20px;
+        min-width: 250px;
+        margin-top: 40px;
+        border-radius: $border-r;
+        .opinion-descr {
+            font-size: 14px;
+        }
+        .quote {
+            background: $secondary;
+            border-radius: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%,-50%);
+            display: grid;
+            place-items: center;
+            svg {
+                color: $white;
+                font-size: 1.5em;
+            }
+        }
+        > p {
+            color: $primary;
+            font-style: italic;
+        }
+        .opinion-profile {
+            width: 80px;
+            height: 80px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .opinion-owner {
+            .name {
+                color: $alt-primary;
+            }
+            .address {
+                font-style: italic;
+            }
+            .type {
+                color: $alt-primary;
+                border: 1px solid $alt-primary;
+                padding: 0.25em 0.5em;
+                border-radius: $border-r;
+            }
+        }
+    }
+}
+
+// start nos agences
+.agences {
+    .agences-container {
+        margin-top: 30px;
+        .agence-item.trans {
+            transform: translateX(-200%);
+        }
+    }
+    .agence-item {
+        transition: 0.5s ease-in-out;
+        @media(max-width: 480px) {
+            width: 100%;
+        }
+        img {
+            height: 250px;
+            border-radius: $border-r;
+        }
+        h4 {
+            color: $secondary;
+        }
+        p {
+            color: $primary;
+        }
+    }
+    .main-button {
+        @media(max-width: 480px) {
+            text-align: center;
+        }
+    }
+}
+
+// start magazine
+.magazine {
+    .main-heading p a {
+        color: $black;
+        text-decoration: underline;
+    }
+    .magazine-container {
+        margin-top: 30px;
+    }
+    .magazine-item {
+        padding: 0;
+        min-width: 270px;
+        max-width: 330px;
+        box-shadow: $box-s;
+        border-radius: $border-r;
+    }
+    .magazine-content {
+        padding: 10px 15px;
+    }
+    .magazine-img {
+        height: 180px;
+        img {
+            height: 100%;
+            width: 100%;
+            border-top-left-radius: $border-r;
+            border-top-right-radius: $border-r;
+        }
+    }
+    .link {
+        color: $secondary;
+        svg {
+            color: $secondary;
+        }
+    }
+}
+
+// start questions
+.questions {
+    .questions-list li {
+        max-width: 400px;
+        border: 1px solid $black;
+        padding: 15px 0;
+        margin: 20px auto;
+        border-radius: $border-r;
+        font-size: 15px;
+    }
+    .question-img {
+        height: 250px;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+// start contact 
+.contact {
+    .contact-img {
+        height: 250px;
+        img {
+            height: 100%;
+        }
+    }
+}
+

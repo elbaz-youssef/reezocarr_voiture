@@ -1,0 +1,132 @@
+/* style of header */ 
+@use '../abstracts' as *;
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 100;
+        .header-container {            
+            margin: auto;
+            min-height: 50px;
+            .bar span {
+                display: block;
+                width: 25px;
+                margin: 5px 0;
+                height: 2px;
+                background-color: $white;
+            }
+            .header-logo {
+                .logo {
+                    a {
+                        color: $white;
+                        font-size: 1.8em;
+                        font-weight: 500;
+                    }
+                    svg {
+                        color: $white;
+                        font-size: 20px;
+                    }
+                    .descr {
+                        text-transform: uppercase;
+                        font-size: 11px;
+                        word-spacing: 1px;
+                        color: $white;
+                        margin-top: -12px;
+                    }
+                }
+                .nos-agences {
+                    margin-left: 40px;
+                    a {
+                        color: $white;
+                        font-size: $fs-l;
+                    }
+                    svg {
+                        color: $white;
+                        font-size: 13px;
+                    }
+                }
+            }
+            .header-lists {
+                ul > li {
+                    margin-left: 30px;
+                }
+                li.financement svg {
+                    color: $white;
+                    font-size: 13px;
+                }
+                ul > li:not(.financement) a {
+                    transition: color 0.3s;
+                }
+                ul > li:not(.financement) a:hover {
+                    color: $alt-primary;
+                }
+                ul > li > a {
+                    color: $white;
+                    font-size: $fs-l;
+                }
+                .connexion {
+                    height: fit-content;
+                    margin-left: 40px;
+                    padding: 8px 16px;
+                    border: none;
+                    background-color: $primary;
+                    color: $white;
+                    border-radius: $border-r;
+                    font-size: $fs-l;
+                    transition: background-color 0.3s;
+                    &:hover {
+                        background-color: $alt-primary;
+                    }
+                }
+            }
+        }
+    .user {
+        font-size: 22px;
+    }
+}
+
+.bar-clicked.bar {
+    span:first-child {
+        animation: trans1 0.1s ease-in-out forwards, rotat1 0.2s 0.1s ease-in-out forwards;
+    }
+    span:nth-child(2) {
+        transform: scale(0);
+    }
+    span:last-child {
+        animation: trans2 0.1s ease-in-out forwards, rotat2 0.2s 0.1s ease-in-out forwards;
+    }
+}
+@keyframes trans1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(7px);
+    }
+}
+@keyframes rotat1 {
+    0% {
+        transform: translateY(7px) rotate(0);
+    }
+    100% {
+        transform: translateY(7px) rotate(-45deg);
+    }
+}
+@keyframes trans2 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
+}
+@keyframes rotat2 {
+    0% {
+        transform: translateY(-7px) rotate(0);
+    }
+    100% {
+        transform: translateY(-7px) rotate(45deg);
+    }
+}
